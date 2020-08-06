@@ -25,6 +25,23 @@ vi index.html
 
 cd ..
 
+vi conf.d/nginx.conf
+
+server {
+    listen              443 ssl;
+    server_name         server.company.com;
+    root           /usr/share/nginx/html;
+    index          index.html;
+    location / {
+                try_files $uri $uri/ =404;
+        }
+
+    ssl_certificate     /etc/letsencrypt/live/xxx.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/xxx.com/privkey.pem;
+}
+
+#Save and Exit
+
 docker-compose up -d
 
 dokcer ps
