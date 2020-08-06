@@ -1,14 +1,21 @@
-version: '3'
 
+version: '3'
 services:
-  proxy:
-    image: staticfloat/nginx-certbot
-    restart: always
-    environment:
-      CERTBOT_EMAIL: "your.email@example.com"
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./conf.d:/etc/nginx/user.conf.d:ro
+    frontend:
+        restart: unless-stopped
+        image: staticfloat/nginx-certbot
+        ports:
+            - 80:80/tcp
+            - 443:443/tcp
+        environment:
+            CERTBOT_EMAIL: owner@company.com
+            ENVSUBST_VARS: FQDN
+            FQDN: server.company.com
+        volumes:
+          - ./conf.d:/etc/nginx/user.conf.d:ro
+          - letsencrypt:/etc/letsencrypt
+          - ./app:/usr/share/nginx/html
+
+volumes:
+    letsencrypt:
 
