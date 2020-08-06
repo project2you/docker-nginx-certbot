@@ -1,4 +1,19 @@
 # docker-nginx-certbot
+```bash
+$ mkdir html
+$ cd html
+$ vi index.html
+$    -> Hi
+```
+
+```bash
+$ mkdir html
+$ cd html
+$ vi index.html
+$    -> Hi
+```
+
+# docker-nginx-certbot
 Create and automatically renew website SSL certificates using the free [letsencrypt](https://letsencrypt.org/) certificate authority, and its client [*certbot*](https://certbot.eff.org/), built on top of the [nginx](https://www.nginx.com/) webserver.
 
 This repository was originally forked from `@henridwyer`, many thanks to him for the good idea.  It has since been completely rewritten, and bears almost no resemblance to the original.  This repository is _much_ more opinionated about the structure of your webservers/containers, however it is easier to use as long as all of your webservers follow the given pattern.
