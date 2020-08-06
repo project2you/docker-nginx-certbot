@@ -6,12 +6,6 @@ $ vi index.html
 $    -> Hi
 ```
 
-```bash
-$ mkdir html
-$ cd html
-$ vi index.html
-$    -> Hi
-```
 
 # docker-nginx-certbot
 Create and automatically renew website SSL certificates using the free [letsencrypt](https://letsencrypt.org/) certificate authority, and its client [*certbot*](https://certbot.eff.org/), built on top of the [nginx](https://www.nginx.com/) webserver.
