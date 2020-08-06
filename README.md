@@ -14,18 +14,20 @@ sudo setfacl -m user:$USER:rw /var/run/docker.sock
 sudo apt install python-certbot-nginx
 sudo certbot certonly --standalone --preferred-challenges http -d xxx.com
 
+git clone https://github.com/project2you/docker-nginx-certbot.git
 
+mkdir html
+cd html
+vi index.html
+    -> Hi
+
+cd ..
+
+docker-compose up -d
+
+dokcer ps
 
 ```
-
-# docker-nginx-certbot
-```bash
-$ mkdir html
-$ cd html
-$ vi index.html
-$    -> Hi
-```
-
 
 # docker-nginx-certbot
 Create and automatically renew website SSL certificates using the free [letsencrypt](https://letsencrypt.org/) certificate authority, and its client [*certbot*](https://certbot.eff.org/), built on top of the [nginx](https://www.nginx.com/) webserver.
