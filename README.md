@@ -16,6 +16,8 @@ sudo certbot certonly --standalone --preferred-challenges http -d xxx.com
 
 git clone https://github.com/project2you/docker-nginx-certbot.git
 
+cd docker-nginx-certbot/example
+
 mkdir html
 cd html
 vi index.html
