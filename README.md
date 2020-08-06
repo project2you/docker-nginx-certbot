@@ -14,6 +14,8 @@ sudo setfacl -m user:$USER:rw /var/run/docker.sock
 sudo apt install python-certbot-nginx
 sudo certbot certonly --standalone --preferred-challenges http -d xxx.com
 
+
+
 ```
 
 # docker-nginx-certbot
@@ -43,8 +45,8 @@ And a `.conf` in that directory:
 server {
     listen              443 ssl;
     server_name         server.company.com;
-    ssl_certificate     /etc/letsencrypt/live/server.company.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/server.company.com/privkey.pem;
+    ssl_certificate     /etc/letsencrypt/live/xxx.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/xxx.com/privkey.pem;
 
     location / {
         ...
