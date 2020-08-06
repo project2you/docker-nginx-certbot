@@ -1,3 +1,21 @@
+# Install docker and certbot
+```bash
+sudo apt update
+apt install certbot
+
+sudo apt install docker.io -y
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+sudo setfacl -m user:$USER:rw /var/run/docker.sock
+
+sudo apt install python-certbot-nginx
+sudo certbot certonly --standalone --preferred-challenges http -d xxx.com
+
+```
+
 # docker-nginx-certbot
 ```bash
 $ mkdir html
